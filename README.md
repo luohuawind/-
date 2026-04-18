@@ -24,6 +24,7 @@
     {"content": "用户生日是5月20日", "create_time": "2026-04-18", "is_permanent": true}
   ]
 }
+```
 如何运行
 bash
 # 直接运行（测试记忆加载）
