@@ -25,32 +25,32 @@
   ]
 }
 ```
-如何运行
-bash
-# 直接运行（测试记忆加载）
+如何运行：
+直接运行（测试记忆加载）
 python memory_retrieval.py
 
-# 作为工具调用（查询相关记忆）
+作为工具调用（查询相关记忆）
 python memory_retrieval.py "用户喜欢喝什么"
-# 输出：{"content": "【日常记忆】用户说喜欢喝美式咖啡"}
-技术原理
+输出：{"content": "【日常记忆】用户说喜欢喝美式咖啡"}
+
+# 技术原理
 关键词过滤：提取查询词，过滤包含任意关键词的记忆
 
 相似度排序：基于共享词频的Jaccard相似度，对候选记忆排序
 
 Top3截断：取相似度 > 0.05 的Top3记忆返回
 
-适用场景
+# 适用场景
 为大模型提供长期记忆的轻量级方案
 
 资源受限环境（如边缘设备）
 
 学习RAG原理的参考实现
 
-与Ollama集成示例
+# 与Ollama集成示例
 python
 # 在Ollama Modelfile中配置工具调用
-TOOL {
+```TOOL {
   "type": "function",
   "function": {
     "name": "semantic_search",
@@ -58,7 +58,11 @@ TOOL {
     "parameters": {...}
   }
 }
+```
+```
 项目结构
 text
 memory_retrieval.py   # 主程序
 memory.json           # 记忆文件（需自行创建）
+
+```
